@@ -3,7 +3,7 @@ var express = require('express');
 var router = express.Router();
 var bodyParser = require('body-parser');
 
-router.use(express.static(__dirname + '/views'));
+router.use(express.static(__dirname + '/view'));
 router.use(bodyParser.urlencoded({ extended: true }));
 
 router.route('/') 
