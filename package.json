@@ -5,14 +5,14 @@
   "main": "index.js",
   "scripts": {
     "start": "node server.js",
-    "test": "mocha ./test/tests.js"
+    "test": "mocha ./test/test.js"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/junior-design-156/gt-excel-website.git"
   },
   "author": "",
-  "license": "ISC",
+  "license": "",
   "bugs": {
     "url": "https://github.com/junior-design-156/gt-excel-website/issues"
   },
