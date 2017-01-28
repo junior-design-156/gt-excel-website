@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html ng-app = "gtexcelApp">
+  <head>
+     <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>GT Excel</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/carousel.css" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/navbar-static-top.css" rel="stylesheet">
+
+    <!-- Twitter Feed Styling -->
+    <link href="css/twitter.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <style>
+	.diagram ul{
+		padding-top: 20px; position: relative;
+	
+		transition: all 0.5s;
+		-webkit-transition: all 0.5s;
+		-moz-transition: all 0.5s;
+	}
+	
+	.diagram li {
+	float: left; text-align: center;
+	list-style-type: none;
+	position: relative;
+	padding: 20px 5px 0 5px;
+	
+	transition: all 0.5s;
+	-webkit-transition: all 0.5s;
+	-moz-transition: all 0.5s;
+}
+
+
+	.diagram li::before, .diagram li::after{
+		content: '';
+		position: absolute; top: 0; right: 50%;
+		border-top: 1px solid #ccc;
+		width: 50%; height: 20px;
+	}
+	.diagram li::after{
+		right: auto; left: 50%;
+		border-left: 1px solid #ccc;
+	}
+
+	/*We need to remove left-right connectors from elements without 
+	any siblings*/
+	.diagram li:only-child::after, .diagram li:only-child::before {
+		display: none;
+	}
+
+	/*Remove space from the top of single children*/
+	.diagram li:only-child{ padding-top: 0;}
+
+	/*Remove left connector from first child and 
+	right connector from last child*/
+	.diagram li:first-child::before, .diagram li:last-child::after{
+		border: 0 none;
+	}
+	/*Adding back the vertical connector to the last nodes*/
+	.diagram li:last-child::before{
+		border-right: 1px solid #ccc;
+		border-radius: 0 5px 0 0;
+		-webkit-border-radius: 0 5px 0 0;
+		-moz-border-radius: 0 5px 0 0;
+	}
+	.diagram li:first-child::after{
+		border-radius: 5px 0 0 0;
+		-webkit-border-radius: 5px 0 0 0;
+		-moz-border-radius: 5px 0 0 0;
+	}
+
+	/*Time to add downward connectors from parents*/
+	.diagram ul ul::before{
+		content: '';
+		position: absolute; top: 0; left: 50%;
+		border-left: 1px solid #ccc;
+		width: 0; height: 20px;
+	}
+	.diagram li p {
+		border: 5px solid #ccc;
+		padding: 5px;
+		text-decoration: none;
+		color: #666;
+		font-family: arial, verdana, tahoma;
+		font-size: 12px;
+		display: inline-block;
+
+	}
+
+	.diagram li a{
+		border: 5px solid #ccc;
+		padding: 5px;
+		text-decoration: none;
+		color: #666;
+		font-family: arial, verdana, tahoma;
+		font-size: 12px;
+		display: inline-block;
+		
+		transition: all 0.5s;
+		-webkit-transition: all 0.5s;
+		-moz-transition: all 0.5s;
+	}
+
+
+
+  </style>
+  
+  	
+	<hr class="featurette-divider">
+	
+	<div class="diagram">
+		<ul>
+			<li>
+				<p>How do you want to find a job?</p>
+				<ul>
+					<li>
+						<p>I want to start my own business...</p>
+						<ul>
+							<li>
+								<a href="#business">Starting a Business</a>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<p>I want to do my own job search and apply for jobs online...</p>
+						<ul>
+							<li>
+								<!--link to our resume info when we have something-->
+								<a href="#resume">Resume and Interview Preparation</a>
+							</li>
+							<li>
+								<!--link to our job search websites-->
+								<a href="#web">Job Search Websites</a>
+							</li>
+							<li>
+								<!--....-->
+								<a href="#voc">Online Vocational Guidance</a>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<p>I want someone to help me look for a job...</p>
+						<ul>
+							<li>
+								<a href="#local">Local Career Resources</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	
+	
