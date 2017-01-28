@@ -1,7 +1,26 @@
 //Defining the module
-var gtexcelApp = angular.module('gtexcelApp', []);
+var gtexcelApp = angular.module('gtexcelApp', ['ngRoute']);
 
-//Define the controller for the module
-gtexcelApp.controller('GTExcelController', function GTExcelController($scope){
-	$scope.name = "Vince";
-});
+
+gtexcelApp.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider){
+	$locationProvider.hashPrefix('');
+	$routeProvider
+		//About
+		.when('/about', {
+			templateUrl: 'about.html'
+		})
+		//Home
+		.otherwise({
+			templateUrl: 'home.html',
+			controller: 'GTExcelCtrl'
+		});
+}]);
+
+gtexcelApp.controller('GTExcelCtrl',['$scope',function($scope,$route){
+	$scope.name = "home";
+}]);
+
+
+
+
+
