@@ -1,7 +1,7 @@
 //Defining the module
 var gtexcelApp = angular.module('gtexcelApp', [ 'ngRoute' ]);
 
-gtexcelApp.config(['$routeProvider', '$locationProvider', 'controllerProvider', function($routeProvider,$locationProvider,$controllerProvider){
+gtexcelApp.config(['$routeProvider', '$locationProvider', '$controllerProvider', function($routeProvider,$locationProvider,$controllerProvider){
 	$locationProvider.hashPrefix("");
 	$controllerProvider.allowGlobals();
 	$(".nav a").on("click", function(){
@@ -37,7 +37,7 @@ gtexcelApp.controller('GTExcelController', function($scope){
 	$scope.name = "Vince";
 });
 
-gtexcelApp.controller('JobSearchController', function($scope){
+gtexcelApp.controller('JobSearchController', function JobSearchController($scope){
 	$scope.option = 0;
 	$scope.toggle = function(val) {
 		$scope.option = val;
