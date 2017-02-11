@@ -31,143 +31,132 @@
   </head>
 
   <style>
-	.diagram ul{
-		padding-top: 20px; position: relative;
-	
-		transition: all 0.5s;
-		-webkit-transition: all 0.5s;
-		-moz-transition: all 0.5s;
-	}
-	
-	.diagram li {
-	float: left; text-align: center;
-	list-style-type: none;
-	position: relative;
-	padding: 20px 5px 0 5px;
-	
-	transition: all 0.5s;
-	-webkit-transition: all 0.5s;
-	-moz-transition: all 0.5s;
-}
-
-
-	.diagram li::before, .diagram li::after{
-		content: '';
-		position: absolute; top: 0; right: 50%;
-		border-top: 1px solid #ccc;
-		width: 50%; height: 20px;
-	}
-	.diagram li::after{
-		right: auto; left: 50%;
-		border-left: 1px solid #ccc;
-	}
-
-	/*We need to remove left-right connectors from elements without 
-	any siblings*/
-	.diagram li:only-child::after, .diagram li:only-child::before {
-		display: none;
-	}
-
-	/*Remove space from the top of single children*/
-	.diagram li:only-child{ padding-top: 0;}
-
-	/*Remove left connector from first child and 
-	right connector from last child*/
-	.diagram li:first-child::before, .diagram li:last-child::after{
-		border: 0 none;
-	}
-	/*Adding back the vertical connector to the last nodes*/
-	.diagram li:last-child::before{
-		border-right: 1px solid #ccc;
-		border-radius: 0 5px 0 0;
-		-webkit-border-radius: 0 5px 0 0;
-		-moz-border-radius: 0 5px 0 0;
-	}
-	.diagram li:first-child::after{
-		border-radius: 5px 0 0 0;
-		-webkit-border-radius: 5px 0 0 0;
-		-moz-border-radius: 5px 0 0 0;
-	}
-
-	/*Time to add downward connectors from parents*/
-	.diagram ul ul::before{
-		content: '';
-		position: absolute; top: 0; left: 50%;
-		border-left: 1px solid #ccc;
-		width: 0; height: 20px;
-	}
-	.diagram li p {
-		border: 5px solid #ccc;
-		padding: 5px;
-		text-decoration: none;
-		color: #666;
-		font-family: arial, verdana, tahoma;
-		font-size: 12px;
-		display: inline-block;
-
-	}
-
-	.diagram li a{
-		border: 5px solid #ccc;
-		padding: 5px;
-		text-decoration: none;
-		color: #666;
-		font-family: arial, verdana, tahoma;
-		font-size: 12px;
-		display: inline-block;
+	.diagram{
+		text-align: center;
 		
-		transition: all 0.5s;
-		-webkit-transition: all 0.5s;
-		-moz-transition: all 0.5s;
+	}
+	
+	.diagram-box {
+		border: 1px solid #ccc;
+		padding: 10px 5px 10px 5px;
+	}
+	
+	.row {
+		padding: 10px;
+	}
+	
+	.op1{background-color:#ffffcc;}
+	.op2{background-color: #ffcccc;}
+	.op3{background-color:#b3ffff;}
+	
+	.parent .diagram-box {
+		width: 280px;
+		height: 190px;
+		margin-left: 50px;
+	}
+	
+	.child .diagram-box {
+		width: 280px;
+		height: 70px;
+	}
+	
+	.child .diagram-box:hover {
+		border: 5px solid #ccc;
 	}
 
-
+	.child .op1 {
+		margin-top: 50px;
+	}
+	
+	.child .op2-group{
+		margin-top: 35px;
+	}
+	
+	.child .op3{
+		margin-top: 35px;
+	}
+	
+	p {
+		padding-top: 15px;
+		color: black;
+	}
+	
+	h2 {font-size: 22px}
+	h3 {font-size: 18px;
+		margin: 0px;}
+	
 
   </style>
-  
-  	
-	<hr class="featurette-divider">
 	
-	<div class="diagram">
-		<ul>
-			<li>
-				<p>How do you want to find a job?</p>
-				<ul>
-					<li>
-						<p>I want to start my own business...</p>
-						<ul>
-							<li>
-								<a href="#business">Starting a Business</a>
-							</li>
-						</ul>
-					</li>
-					<li>
-						<p>I want to do my own job search and apply for jobs online...</p>
-						<ul>
-							<li>
-								<!--link to our resume info when we have something-->
-								<a href="#resume">Resume and Interview Preparation</a>
-							</li>
-							<li>
-								<!--link to our job search websites-->
-								<a href="#web">Job Search Websites</a>
-							</li>
-							<li>
-								<!--....-->
-								<a href="#voc">Online Vocational Guidance</a>
-							</li>
-						</ul>
-					</li>
-					<li>
-						<p>I want someone to help me look for a job...</p>
-						<ul>
-							<li>
-								<a href="#local">Local Career Resources</a>
-							</li>
-						</ul>
-					</li>
-				</ul>
-			</li>
-		</ul>
+	<div class="diagram" ng-controller="JobSearchController">
+		<h2 class="featurette-heading">How do you want to find a job?</h2>
+		<hr class="featurette-divider">
+		<div class = "col-sm-4">
+			<div class = "parent">
+				<div class = "row">
+					<div class = "diagram-box op1">
+						<h2>I want someone to help me look for a job.</h2>
+						<p>I want to know what agencies can help me.</p>
+					</div>
+				</div>
+				<div class = "row">
+					<div class = "diagram-box op2">
+						<h2>I want to do my own job search and apply for jobs online.</h2>
+						<p>I want to know what websites to look for jobs on.</p>
+					</div>
+				</div>
+				<div class = "row">
+					<div class = "diagram-box op3">
+						<h2>I want to start my own business.</h2>
+						<p>I want to find local and online resources and people to help me start a business</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class = "col-sm-4">
+			<div class = "child">
+				<div class = "row">
+					<div class = "diagram-box op1">
+						<a href="#/local"><p>Local Career Resources</p></a>
+					</div>
+				</div>
+				<div class = "op2-group">
+					<div class = "row">
+						<div class = "diagram-box op2" ng-click=toggle(1)>
+							<p>Resume and Interview Preparation</p>
+						</div>
+					</div>
+					<div class = "row">
+						<div class = "diagram-box op2" ng-click=toggle(2)>
+							<p>Job Searching Websites</p>
+						</div>
+					</div>
+					<div class = "row">
+						<div class = "diagram-box op2" ng-click=toggle(3)>
+							<p>Online Vocational Guidance</p>
+						</div>
+					</div>
+				</div>
+				<div class = "row">
+					<div class = "diagram-box op3">
+						<a href="#/business"><p>Starting a Business</p></a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class = "col-sm-4">
+			<div class = "diagram-box">
+				<div ng-show={{option == 1}}>
+					<a href="www.gettinghired.com"><h3>Getting Hired</h3></a>
+					<p>GettingHired was launched in 2008 with the sole purpose of helping people with
+					disabilities find a job. You will definitely find local job openings on this site. You can
+					also search their job openings without having to complete their registration form.
+					Registration is free.</p>
+				</div>
+			</div>
+		</div>
+	</div>
+		
 	
 	
+	</body>
