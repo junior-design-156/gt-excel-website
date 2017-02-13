@@ -42,4 +42,18 @@ gtexcelApp.controller('JobSearchController', function JobSearchController($scope
 	$scope.toggle = function(val) {
 		$scope.option = val;
 	};
-})
+});
+
+gtexcelApp.controller('BenefitsCounselorController', function BenefitsCounselorController($scope){
+	$scope.option = 0;
+	$scope.toggle = function(val) {
+		$scope.option = val;
+	};
+});
+
+gtexcelApp.controller('BenefitsInfoController', function BenefitsInfoController($scope){
+	$scope.option = 1;
+	$scope.toggle = function(val) {
+		$scope.option = val;
+	};
+});

@@ -1,35 +1,35 @@
 
-  <style>
+<style>
 	.diagram{
 		text-align: center;
-		
 	}
-	
+
 	.diagram-box {
 		border: 1px solid #ccc;
+		border-radius: 25px;
 		padding: 10px 10px 10px 10px;
 		background-color: white;
 	}
-	
+
 	.row {
 		padding: 10px;
 	}
-	
+
 	.op1{background-color:#ffffcc;}
 	.op2{background-color: #ffcccc;}
 	.op3{background-color:#b3ffff;}
-	
+
 	.parent .diagram-box {
 		width: 280px;
 		height: 190px;
 		margin-left: 50px;
 	}
-	
+
 	.child .diagram-box {
 		width: 280px;
 		height: 70px;
 	}
-	
+
 	.child .diagram-box:hover {
 		border: 5px solid #ccc;
 	}
@@ -37,26 +37,24 @@
 	.child .op1 {
 		margin-top: 50px;
 	}
-	
+
 	.child .op2-group{
 		margin-top: 35px;
 	}
-	
+
 	.child .op3{
 		margin-top: 35px;
 	}
-	
+
 	p {
 		padding-top: 15px;
 		color: black;
 	}
-	
+
 	h2 {font-size: 22px}
 	h3 {font-size: 18px;
 		margin: 5px, 0px, 0px, 0px;}
-	
-
-  </style>
+</style>
 
 <body  ng-app = "gtexcelApp">
 	<div class="diagram" ng-controller="JobSearchController" ng-init="option = 0">
