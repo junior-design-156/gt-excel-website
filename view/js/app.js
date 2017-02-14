@@ -7,6 +7,7 @@ gtexcelApp.config(['$routeProvider', '$locationProvider', '$controllerProvider',
 	$(".nav a").on("click", function(){
    	$(".nav").find(".active").removeClass("active");
    	$(this).parent().addClass("active");
+   	$('#accordion').find('.t-title, .t-toggle').attr('data-toggle', 'collapse');
 });
 	$routeProvider
 		.when('/about', {
@@ -34,12 +35,24 @@ gtexcelApp.config(['$routeProvider', '$locationProvider', '$controllerProvider',
 
 //Define the controller for the module
 gtexcelApp.controller('GTExcelController', function($scope){
-	$scope.name = "Vince";
-});
+	$scope.homeButton = function(){
+		$(".nav").find(".active").removeClass("active");
+	}
 
-gtexcelApp.controller('JobSearchController', function JobSearchController($scope){
+	//Put jobsearch controller stuff here
 	$scope.option = 0;
 	$scope.toggle = function(val) {
 		$scope.option = val;
 	};
-})
+
+	$scope.businessButton = function(){
+	   	$(".nav").find(".active").removeClass("active");
+	   	$(".nav").find(".busi").addClass("active");
+	}
+
+	$scope.localButton = function(){
+	   	$(".nav").find(".active").removeClass("active");
+	   	$(".nav").find(".local").addClass("active");
+	}
+});
+
