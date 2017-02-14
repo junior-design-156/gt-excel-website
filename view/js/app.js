@@ -4,9 +4,11 @@ var gtexcelApp = angular.module('gtexcelApp', [ 'ngRoute' ]);
 gtexcelApp.config(['$routeProvider', '$locationProvider', '$controllerProvider', function($routeProvider,$locationProvider,$controllerProvider){
 	$locationProvider.hashPrefix("");
 	$controllerProvider.allowGlobals();
+	//For navigation bar shading
 	$(".nav a").on("click", function(){
    	$(".nav").find(".active").removeClass("active");
    	$(this).parent().addClass("active");
+   	//For accordian toggling
    	$('#accordion').find('.t-title, .t-toggle').attr('data-toggle', 'collapse');
 });
 	$routeProvider
