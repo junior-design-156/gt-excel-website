@@ -1,0 +1,183 @@
+<<<<<<< HEAD
+=======
+<style>
+	.diagram-box {
+		border: 1px solid #ccc;
+		border-radius: 25px;
+		margin-top: 20px;
+		padding: 10px 10px 10px 10px;
+		background-color: #ffcccc;;
+		text-align: center;
+	}
+	
+	.col-sm-3 .diagram-box:hover {
+		border: 5px solid #ccc;
+	}
+	
+	.row > .diagram-box{
+		width: 700px;
+		height: auto;
+	}
+	
+	h2 {text-align: center;
+		padding-bottom: 30px;}
+	
+	.benefits-title {
+		padding-top: 50px;
+		padding-bottom: 50px;}
+	
+</style>
+
+<body  ng-app = "gtexcelApp">
+	<div class="col-sm-8">
+		<h2 class="featurette-heading">What will happen to my SSI & Medicaid when I start working?</h2>
+		<p>This section contains information on Supplemental Security Income (SSI),
+		Social Security Disability Insurance (SSDI), and Medicaid. If you receive SSI, SSDI, or Medicaid you may want to work but you may
+		wonder <strong>how these benefits will be effected if you start working.</strong></p>
+		<br>
+		<p>Some people may worry that they will lose all of their monthly cash benefits
+		(SSI or SSDI) or that their medical insurance (Medicaid) will end if they start
+		working. If you receive either of these disability benefits (SSI or SSDI) and you begin working,
+		<strong>you must report any income you earn to the Social Security Administration (SSA).</strong></p>
+		<br>
+		<p>However, this does not mean that the amount of your benefits will be affected or that
+		you will immediately stop receiving disability benefits, but it is very important that you
+		know how these benefits will be affected when you start working and earning money.</p>
+		<br>
+		<p>SSI, SSDI, and Medicaid all offer <strong>work incentives</strong> that can extend your cash
+		benefits and medical coverage when you start working.</p>
+		
+		<h2 class="featurette-heading">Locate your benefits counselor to learn more.</h2>
+		<div class="row">
+			<div class = "diagram-box">
+				<h3>Do you have a Benefits Counselor?</h3>
+				<p>A benefits counselor helps you understand and plan for how working
+				and earning money will effect your SSI, SSDI, and Medicaid benefits.</p>
+			</div>
+		</div>
+		<div class="row" ng-controller="BenefitsCounselorController" ng-init="option = 0">		
+			<div class = "col-sm-3">
+				<div class = "diagram-box" ng-click=toggle(1)>
+					<h3>Yes</h3>
+					<div ng-show="option == 1" class="ng-hide">
+						<p>Let your Benefits Counselor know that you are looking for work</p>
+						<p>They will help you understand work incentives and how earning
+						income will effect your SSI and Medicaid</p>
+					</div>
+				</div>
+			</div>
+			
+			<div class = "col-sm-3 col-sm-offset-1">
+				<div class = "diagram-box" ng-click=toggle(2)>
+					<h3>I Don't Know</h3>
+					<div ng-show="option == 2" class="ng-hide">
+						<p>Benefits Counselors, also called Community Work Incentives Coordinators can help you
+						learn about the work incentives that are available to help reduce the risk of trying work.</p>
+					</div>
+				</div>
+			</div>
+			
+			
+			<div class = "col-sm-3 col-sm-offset-1">
+				<div class = "diagram-box" ng-click=toggle(3)>
+					<h3>No</h3>
+					<div ng-show="option == 3" class="ng-hide">
+						<p>Visit SSA on line at <a href="http://www.ssa.gov/">www.ssa.gov</a> to learn more and to make
+						an appointment with your local Benefits Counselor/Community Work Incentives
+						Coordinator. Their services are free.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class = "col-sm-4">
+	<h2 class="featurette-heading benefits-title">Your Benefits</h2>
+		<div class="panel-group" id="accordion" ng-controller="BenefitsInfoController" ng-init="option=1">
+			<div class="panel panel-default">
+				<div class="panel-heading" ng-click=toggle(1)>
+					<h4 class="panel-title"><strong>Ticket to Work</strong></h4>
+				</div>
+				<div id="collapse1" class="ng-hide" ng-show="option == 1">
+					<div class="panel-body">
+						<p>The Ticket to Work Program is a program of the Social Security Administration.
+						It's a free program that helps people who receive disability benefits (SSI or SSDI)
+						return to work or go to work for the first time.</p>
+						<p>If you receive SSI or SSDI and are between the ages of 18 - 64, you qualify for
+						Ticket to Work Services.</p>
+						<p>The Ticket to Work Program gives you choices of where to receive employment services.
+						Ticket Holders assign their tickets to an Employment Network (EN) to obtain employment
+						services, career counseling, job placement, vocational rehabilitation services, or other
+						support services that are necessary to achieve their work goal.</p>
+						<p>The Ticket to Work website includes a "Ticket to Work Employment Resource Database"
+						where you can search for local Employment Networks (ENs) and Vocational
+						Rehabilitation Agencies.</p>
+						<p>Learn more at <a href = "http://choosework.net/">www.choosework.net</a></p>
+					</div>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading" ng-click=toggle(2)>
+					<h4 class="panel-title"><strong>SSI</strong></h4>
+				</div>
+				<div id="collapse2" class="ng-hide" ng-show="option == 2">
+					<div class="panel-body">
+						<p>Supplemental Security Income (SSI) is a Federal income supplement program funded by general tax revenues (not Social Security taxes):</p>
+						<ol>
+						<li><p>It is designed to help aged, blind, and disabled people, who have little or no income; and</p></li>
+						<li><p>It provides cash to meet basic needs for food, clothing, and shelter.</p></li>
+						</ol>
+						<p>To see if you qualify, visit <a href = "https://www.ssa.gov/">www.ssa.gov</a></p>
+					</div>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading" ng-click=toggle(3)>
+					<h4 class="panel-title"><strong>SSDI</strong></h4>
+				</div>
+				<div id="collapse3" class="ng-hide" ng-show="option == 3">
+					<div class="panel-body">
+						<p>In general, to get disability benefits, you must meet two
+						different earnings tests:</p>
+						<ol>
+						<li><p>A recent work test, based on your age at the time you
+						became disabled; and</p></li>
+						<li><p>A duration of work test to show that you worked long
+						enough under Social Security.</p></li>
+						</ol>
+						<p>Certain blind workers have to meet only the duration of
+						work test.</p>
+						<p>To see if you qualify, visit <a href = "https://www.ssa.gov/">www.ssa.gov</a></p>
+					</div>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading" ng-click=toggle(4)>
+					<h4 class="panel-title"><strong>Medicare</strong></h4>
+				</div>
+				<div id="collapse4" class="ng-hide" ng-show="option == 4">
+					<div class="panel-body">
+						<p>Medicare is our country's health insurance program for people age 65 or older.
+						Certain people younger than age 65 can qualify for Medicare, too, including
+						those with disabilities and those who have permanent kidney failure.</p>
+						<p>To learn more, visit <a href = "https://www.medicare.gov/">www.medicare.gov</a></p>
+					</div>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading" ng-click=toggle(5)>
+					<h4 class="panel-title"><strong>Medicaid</strong></h4>
+				</div>
+				<div id="collapse5" class="ng-hide" ng-show="option == 5">
+					<div class="panel-body">
+						<p>Medicaid provides health coverage to millions of Americans, including eligible low-income adults, children, pregnant women, elderly adults and people with disabilities. Medicaid is administered by states, according to federal requirements.  The program is funded jointly by states and the federal government.</p>
+						<p>To learn more, visit <a href = "https://www.medicaid.gov/">www.medicaid.gov</a></p>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+	
+	</div>
+</body>
+>>>>>>> 7a58ce49c79534cd6885de4cb80a074ba77a8361

@@ -46,6 +46,7 @@ gtexcelApp.controller('GTExcelController', function($scope){
 	$scope.toggle = function(val) {
 		$scope.option = val;
 	};
+<<<<<<< HEAD
 
 	$scope.businessButton = function(){
 	   	$(".nav").find(".active").removeClass("active");
@@ -58,3 +59,20 @@ gtexcelApp.controller('GTExcelController', function($scope){
 	}
 });
 
+=======
+});
+
+gtexcelApp.controller('BenefitsCounselorController', function BenefitsCounselorController($scope){
+	$scope.option = 0;
+	$scope.toggle = function(val) {
+		$scope.option = val;
+	};
+});
+
+gtexcelApp.controller('BenefitsInfoController', function BenefitsInfoController($scope){
+	$scope.option = 1;
+	$scope.toggle = function(val) {
+		$scope.option = val;
+	};
+});
+>>>>>>> 7a58ce49c79534cd6885de4cb80a074ba77a8361
