@@ -39,27 +39,25 @@ gtexcelApp.config(['$routeProvider', '$locationProvider', '$controllerProvider',
 gtexcelApp.controller('GTExcelController', function($scope){
 	$scope.homeButton = function(){
 		$(".nav").find(".active").removeClass("active");
-	}
+	};
+});
 
-	//Put jobsearch controller stuff here
+gtexcelApp.controller('JobSearchController', function JobSearchController($scope){
 	$scope.option = 0;
 	$scope.toggle = function(val) {
 		$scope.option = val;
 	};
-<<<<<<< HEAD
 
 	$scope.businessButton = function(){
 	   	$(".nav").find(".active").removeClass("active");
 	   	$(".nav").find(".busi").addClass("active");
-	}
+	};
 
 	$scope.localButton = function(){
 	   	$(".nav").find(".active").removeClass("active");
 	   	$(".nav").find(".local").addClass("active");
-	}
-});
+	};
 
-=======
 });
 
 gtexcelApp.controller('BenefitsCounselorController', function BenefitsCounselorController($scope){
@@ -75,4 +73,3 @@ gtexcelApp.controller('BenefitsInfoController', function BenefitsInfoController(
 		$scope.option = val;
 	};
 });
->>>>>>> 7a58ce49c79534cd6885de4cb80a074ba77a8361
