@@ -30,65 +30,52 @@
     <![endif]-->
   </head>
 
-  <body>
+  <body ng-controller="GTExcelController">
 
     <!-- Static navbar -->
-    <nav class="navbar navbar-default navbar-static-top">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="#">Excel</a>
-        </div>
-
-        <!-- Collapse Part-->
-        <!-- Static navbar -->
-      <nav class="navbar navbar-default navbar-static-top">
+      <nav class="navbar navbar-default navbar-fixed-top">
         <div class="container">
           <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <button type="button" class="navbar-toggle collapsed"data-toggle="nav" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
               <span class="sr-only">Toggle navigation</span>
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand">Excel</a>
+            <a class="navbar-brand" href="#" ng-click = "homeButton()">Excel</a>
           </div>
-      
-      <!-- Collapse Part-->
-          <div id="navbar" class="navbar-collapse collapse">
-            <ul class="nav navbar-nav">
-              <li class="active"><a href="#">Home</a></li>
-              <li><a href="#/jobsearch">Looking for Jobs</a></li>
-              <li><a href="#/local">Local Resources</a></li>
-              <li><a href="#/benefits">Government Benefits</a></li>
-              <li><a href="#/fed_hire">Federal Hiring</a></li>
-              <li><a href="#/business">Starting a Business</a></li>
-              <li><a href="#/about">About Us</a></li>
+
         
-            <!--<li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-              <ul class="dropdown-menu">
-                <li><a href="#">Business</a></li>
-                <li><a href="#">Job Resources</a></li>
-                <li><a href="#">Contact</a></li>
-                <li role="separator" class="divider"></li>
-                <li class="dropdown-header">Location</li>
-                <li><a href="#">Contact Info</a></li>
-                <li><a href="#">These are just placeholders for now</a></li>
+        <!-- Collapse Part-->
+            <div id="navbar" class="navbar-collapse nav">
+              <ul class="nav navbar-nav">
+                <li class = "job"><a href="#/jobsearch">Looking for Jobs</a></li>
+                <li class = "local"><a href="#/local">Local Resources</a></li>
+                <li class = "benefits"><a href="#/benefits">Government Benefits</a></li>
+                <li class = "fed"><a href="#/fed_hire">Federal Hiring</a></li>
+                <li class = "busi"><a href="#/business">Starting a Business</a></li>
+                <li class = "about"><a href="#/about">About Us</a></li>
+          
+              <!--<li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <li><a href="#">Business</a></li>
+                  <li><a href="#">Job Resources</a></li>
+                  <li><a href="#">Contact</a></li>
+                  <li role="separator" class="divider"></li>
+                  <li class="dropdown-header">Location</li>
+                  <li><a href="#">Contact Info</a></li>
+                  <li><a href="#">These are just placeholders for now</a></li>
+                </ul>
+              </li>-->
               </ul>
-            </li>-->
-          </ul>
-        </div><!--/.nav-collapse -->
-
-      </div>
-    </nav>
-
-    <div ng-view></div>
+            </div><!--/.nav-collapse -->
+          </div>
+        </nav>
+        
+    <div class = "container">
+      <div ng-view></div>
+    </div>
 
     
 

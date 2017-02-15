@@ -4,9 +4,12 @@ var gtexcelApp = angular.module('gtexcelApp', [ 'ngRoute' ]);
 gtexcelApp.config(['$routeProvider', '$locationProvider', '$controllerProvider', function($routeProvider,$locationProvider,$controllerProvider){
 	$locationProvider.hashPrefix("");
 	$controllerProvider.allowGlobals();
+	//For navigation bar shading
 	$(".nav a").on("click", function(){
    	$(".nav").find(".active").removeClass("active");
    	$(this).parent().addClass("active");
+   	//For accordian toggling
+   	$('#accordion').find('.t-title, .t-toggle').attr('data-toggle', 'collapse');
 });
 	$routeProvider
 		.when('/about', {
@@ -34,7 +37,9 @@ gtexcelApp.config(['$routeProvider', '$locationProvider', '$controllerProvider',
 
 //Define the controller for the module
 gtexcelApp.controller('GTExcelController', function($scope){
-	$scope.name = "Vince";
+	$scope.homeButton = function(){
+		$(".nav").find(".active").removeClass("active");
+	};
 });
 
 gtexcelApp.controller('JobSearchController', function JobSearchController($scope){
@@ -42,6 +47,17 @@ gtexcelApp.controller('JobSearchController', function JobSearchController($scope
 	$scope.toggle = function(val) {
 		$scope.option = val;
 	};
+
+	$scope.businessButton = function(){
+	   	$(".nav").find(".active").removeClass("active");
+	   	$(".nav").find(".busi").addClass("active");
+	};
+
+	$scope.localButton = function(){
+	   	$(".nav").find(".active").removeClass("active");
+	   	$(".nav").find(".local").addClass("active");
+	};
+
 });
 
 gtexcelApp.controller('BenefitsCounselorController', function BenefitsCounselorController($scope){

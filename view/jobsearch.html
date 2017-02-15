@@ -56,7 +56,7 @@
 		margin: 5px, 0px, 0px, 0px;}
 </style>
 
-<body  ng-app = "gtexcelApp">
+<body>
 	<div class="diagram" ng-controller="JobSearchController" ng-init="option = 0">
 		<h2 class="featurette-heading">How do you want to find a job?</h2>
 		<hr class="featurette-divider">
@@ -86,7 +86,7 @@
 			<div class = "child">
 				<div class = "row">
 					<div class = "diagram-box op1">
-						<a href="#/local"><p>Local Career Resources</p></a>
+						<a href="#/local" ng-click = "localButton()"><p>Local Career Resources</p></a>
 					</div>
 				</div>
 				<div class = "op2-group">
@@ -108,7 +108,7 @@
 				</div>
 				<div class = "row">
 					<div class = "diagram-box op3">
-						<a href="#/business"><p>Starting a Business</p></a>
+						<a href="#/business" ng-click = "businessButton()"><p>Starting a Business</p></a>
 					</div>
 				</div>
 			</div>
@@ -203,7 +203,7 @@
 				</div>
 				<div class = "row">
 					<div class = "diagram-box">
-						<a hrefhttp://disability.jobs/"><h3>Disability Jobs</h3></a>
+						<a hrefhttp://disability.jobs/><h3>Disability Jobs</h3></a>
 						<p>The job openings on this site are from companies that want to hire of people with
 						disabilities. This is a my.jobs microsite and it’s sponsored by the Society for Human
 						Resource Management (SHRM). You can search job openings without registering.
