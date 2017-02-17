@@ -23,16 +23,11 @@
     <!-- Twitter Feed Styling -->
     <link href="css/twitter.css" rel="stylesheet">
 
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
   </head>
 
   <body ng-controller="GTExcelController">
 
-    <!-- Static navbar -->
+    <!-- Fixed navbar -->
       <nav class="navbar navbar-default navbar-fixed-top">
         <div class="container">
           <div class="navbar-header">
@@ -46,7 +41,6 @@
           </div>
 
         
-        <!-- Collapse Part-->
             <div id="navbar" class="navbar-collapse nav">
               <ul class="nav navbar-nav">
                 <li class = "job"><a href="#/jobsearch">Looking for Jobs</a></li>
@@ -56,23 +50,12 @@
                 <li class = "busi"><a href="#/business">Starting a Business</a></li>
                 <li class = "about"><a href="#/about">About Us</a></li>
           
-              <!--<li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-                <ul class="dropdown-menu">
-                  <li><a href="#">Business</a></li>
-                  <li><a href="#">Job Resources</a></li>
-                  <li><a href="#">Contact</a></li>
-                  <li role="separator" class="divider"></li>
-                  <li class="dropdown-header">Location</li>
-                  <li><a href="#">Contact Info</a></li>
-                  <li><a href="#">These are just placeholders for now</a></li>
-                </ul>
-              </li>-->
               </ul>
-            </div><!--/.nav-collapse -->
+            </div>
           </div>
         </nav>
         
+    <!-- The dynamic portion, it reads form the routeProvider in the app.js and tells it what html file it should display-->
     <div class = "container">
       <div ng-view></div>
     </div>
