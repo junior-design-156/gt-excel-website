@@ -40,6 +40,34 @@ gtexcelApp.controller('GTExcelController', function($scope){
 	$scope.homeButton = function(){
 		$(".nav").find(".active").removeClass("active");
 	};
+	$scope.aboutButton = function(){
+	   	$(".nav").find(".active").removeClass("active");
+	   	$(".nav").find(".about").addClass("active");
+	};
+
+	$scope.benefitsButton = function(){
+	   	$(".nav").find(".active").removeClass("active");
+	   	$(".nav").find(".benefits").addClass("active");
+	};
+	$scope.fedButton = function(){
+	   	$(".nav").find(".active").removeClass("active");
+	   	$(".nav").find(".fed").addClass("active");
+	};
+
+	$scope.jobSearchButton = function(){
+	   	$(".nav").find(".active").removeClass("active");
+	   	$(".nav").find(".job").addClass("active");
+	};
+	$scope.businessButton = function(){
+	   	$(".nav").find(".active").removeClass("active");
+	   	$(".nav").find(".busi").addClass("active");
+	};
+
+	$scope.localButton = function(){
+	   	$(".nav").find(".active").removeClass("active");
+	   	$(".nav").find(".local").addClass("active");
+	};
+
 });
 
 gtexcelApp.controller('JobSearchController', function JobSearchController($scope){
