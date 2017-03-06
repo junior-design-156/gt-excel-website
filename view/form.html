@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html ng-app="jobForm">
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/navbar-static-top.css" rel="stylesheet">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <body>
+
+    <!--Note: should and add a captcha somewhere-->
+
+    <div ng-controller="formController">
+        <form class="form">
+            <fieldset>
+                <legend class="h2">Your Job Listing</legend>
+                <label>Organization Title <input type="text" ng-model="listing.orgTitle" required/></label>
+                <label>Job Title <input type="text" ng-model="listing.jobTitle" required/></label><br/>
+                <label>Job Description <input type="text" ng-model="listing.jobDescription" style="height:200px;width:500px" required/></label><br/>
+                <label>Contact Info</label></br>
+                <label>E-mail: <input type="email" ng-model="listing.contactInfo.email" required/></label><br/>
+                <label>Phone: <input type="text" ng-model="listing.contactInfo.phone" required/></label><br/>
+            <input type="submit" ng-click="submit(listing)" value="Submit"/><br/>
+            </fieldset>
+        <div ng-show="submitted" class="ng-hide">Listing submitted. Please check your email for confirmation.</div> 
+    </form>
+    </div>
+
+    <script>
+        angular.module('jobForm', [])
+            .controller('formController', ['$scope', '$http', function($scope, $http) {
+                $scope.submitted = false;
+                $http.defaults.headers.post['Content-Type'] = 'application/json';
+                $scope.submit = function(listing) {
+                    $http.post('http://localhost:8080/jobs', listing, {})
+                        .success(function() {
+                            console.log('thing was submitted');
+                            $scope.submitted = true;
+                        });
+                };
+            }]);
+    </script>
+
+    <script src="./js/app.js"></script>
+
+    </body>
+</html>
