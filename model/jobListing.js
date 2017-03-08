@@ -2,9 +2,9 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var schema = new Schema({
-    title: String,
-    author: String,
-    body: String,
+    orgTitle: String,
+    jobTitle: String,
+    jobDescription: String,
     contactInfo: {
         email: String,
         phone: String
@@ -13,7 +13,10 @@ var schema = new Schema({
         type: Date, 
         default: Date.now 
     },
-    hidden: Boolean
+    hidden: {
+        type: Boolean,
+        default: true
+    }
 });
 
 module.exports = mongoose.model('submission', schema);
