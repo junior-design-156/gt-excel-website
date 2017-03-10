@@ -7,7 +7,8 @@ var path = require('path');
 var view = path.resolve(__dirname+'/view');
 
 mongoose.Promise = global.Promise;
-mongoose.connect('mongodb://localhost/excel-job-search-toolkit');
+mongoose.connect('mongodb://localhost/gt-excel-website');
+//mongoose.connect('mongodb://localhost/excel-job-search-toolkit');
 
 var app = express();
 app.use(express.static(view));
