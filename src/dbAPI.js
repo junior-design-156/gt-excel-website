@@ -38,14 +38,10 @@ exports.remove = function(req, res, next) {
 
 // used for searching and stuff
 exports.findAll = function(req, res, next) {
-    collection.findAll({
-        firstName: req.body.first,
-        lastName: req.body.last
-    }, function(err, docs) {
+    collection.findAll(req.body, function(err, docs) {
         if(docs) {
             req.body.docs = docs;
         }
         next(err, req, res);
-    })
-    .limit(5)
+    });
 }
