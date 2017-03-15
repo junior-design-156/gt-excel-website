@@ -30,6 +30,9 @@ gtexcelApp.config(['$routeProvider', '$locationProvider', '$controllerProvider',
 		.when('/fed_hire', {
 			templateUrl: 'fed_hire.html'
 		})
+		.when('/form', {
+			templateUrl: 'form.html'
+		})
 		.otherwise({
 			templateUrl: 'home.html'
 		});
