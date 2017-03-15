@@ -105,14 +105,14 @@ gtexcelApp.controller('BenefitsInfoController', function BenefitsInfoController(
 	};
 });
 
-gtexcelApp.controller('FormController', ['$scope', '$http', function($scope, $http) {
-    $scope.submitted = false;
-    $http.defaults.headers.post['Content-Type'] = 'application/json';
-    $scope.submit = function(listing) {
-        $http.post('http://localhost:8080/index.html#/form', listing, {})
-            .success(function() {
-                console.log('thing was submitted');
-                $scope.submitted = true;
-            });
-    };
-}]);
+//gtexcelApp.controller('FormController', ['$scope', '$http', function($scope, $http) {
+//    $scope.submitted = false;
+//    $http.defaults.headers.post['Content-Type'] = 'application/json';
+//    $scope.submit = function(listing) {
+//        $http.post('http://localhost:8080/index.html#/form', listing, {})
+//            .success(function() {
+//                console.log('thing was submitted');
+//                $scope.submitted = true;
+//            });
+//    };
+//}]);
