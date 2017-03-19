@@ -91,12 +91,21 @@ gtexcelApp.controller('JobSearchController', function JobSearchController($scope
 
 });
 
+gtexcelApp.controller('JobSearchLinkController', function JobSearchLinkController($scope){
+	$scope.val = 0;
+	$scope.switch = function(val) {
+		$scope.val = val;
+	};
+});
+
 gtexcelApp.controller('BenefitsCounselorController', function BenefitsCounselorController($scope){
 	$scope.option = 0;
 	$scope.toggle = function(val) {
 		$scope.option = val;
 	};
 });
+
+
 
 gtexcelApp.controller('BenefitsInfoController', function BenefitsInfoController($scope){
 	$scope.option = 1;
