@@ -30,6 +30,9 @@ gtexcelApp.config(['$routeProvider', '$locationProvider', '$controllerProvider',
 		.when('/fed_hire', {
 			templateUrl: 'fed_hire.html'
 		})
+		.when('/form', {
+			templateUrl: 'form.html'
+		})
 		.otherwise({
 			templateUrl: 'home.html'
 		});
@@ -101,3 +104,15 @@ gtexcelApp.controller('BenefitsInfoController', function BenefitsInfoController(
 		$scope.option = val;
 	};
 });
+
+//gtexcelApp.controller('FormController', ['$scope', '$http', function($scope, $http) {
+//    $scope.submitted = false;
+//    $http.defaults.headers.post['Content-Type'] = 'application/json';
+//    $scope.submit = function(listing) {
+//        $http.post('http://localhost:8080/index.html#/form', listing, {})
+//            .success(function() {
+//                console.log('thing was submitted');
+//                $scope.submitted = true;
+//            });
+//    };
+//}]);
