@@ -7,7 +7,6 @@
 	.diagram-box {
 		margin: 20px;
 		border: 1px solid #ccc;
-		border-radius: 25px;
 		padding: 10px 10px 10px 10px;
 		background-color: white;
 	}
@@ -26,14 +25,14 @@
 
 	.parent .diagram-box {
 		width: 280px;
-		height: 190px;
+		height: 250px;
 	}
 	
 	.child .diagram-box {
 		margin-top: 35px;
 		height: 80px;
 		width: 280px;
-	}	
+	}
 	
 	.diagram-box:hover {
 		border: 5px solid #ccc;
@@ -57,18 +56,18 @@
 			<div class = "row">
 				<div class = "parent">
 					<div class = "col-sm-4">
-						<div class = "diagram-box" ng-class="{'op1-inactive' : option != 1, 'op1-active' : option == 1}" ng-click="toggle(1); switch(0)" >
+						<div class = "diagram-box op1" ng-class="{'op1-inactive' : option != 1, 'op1-active' : option == 1}" ng-click="toggle(1); switch(0)" >
 							<h2>I want someone to help me look for a job.</h2>
 							<p>I want to know what agencies can help me.</p>
 						</div>
 					</div>
-					<div class = "col-sm-4">
+					<div class = "col-sm-4 op2">
 						<div class = "diagram-box" ng-class="{'op2-inactive' : option != 2, 'op2-active' : option == 2}" ng-click=toggle(2)>
 							<h2>I want to do my own job search and apply for jobs online.</h2>
 							<p>I want to know what websites to look for jobs on.</p>
 						</div>
 					</div>
-					<div class = "col-sm-4">
+					<div class = "col-sm-4 op3">
 						<div class = "diagram-box" ng-class="{'op3-inactive' : option != 3, 'op3-active' : option == 3}" ng-click="toggle(3); switch(0)">
 							<h2>I want to start my own business.</h2>
 							<p>I want to find local and online resources and people to help me start a business</p>
