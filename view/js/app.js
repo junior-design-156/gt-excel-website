@@ -43,6 +43,7 @@ gtexcelApp.controller('GTExcelController', function($scope){
 	$scope.homeButton = function(){
 		$(".nav").find(".active").removeClass("active");
 	};
+	
 	$scope.aboutButton = function(){
 	   	$(".nav").find(".active").removeClass("active");
 	   	$(".nav").find(".about").addClass("active");
