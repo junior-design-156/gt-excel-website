@@ -7,7 +7,6 @@
 	.diagram-box {
 		margin: 20px;
 		border: 1px solid #ccc;
-		border-radius: 25px;
 		padding: 10px 10px 10px 10px;
 		background-color: white;
 	}
@@ -26,14 +25,14 @@
 
 	.parent .diagram-box {
 		width: 280px;
-		height: 190px;
+		height: 250px;
 	}
 	
 	.child .diagram-box {
 		margin-top: 35px;
 		height: 80px;
 		width: 280px;
-	}	
+	}
 	
 	.diagram-box:hover {
 		border: 5px solid #ccc;
@@ -47,6 +46,21 @@
 	h2 {font-size: 22px}
 	h3 {font-size: 18px;
 		margin-top 20px;}
+		
+	.card-footer{
+		position:absolute;
+		bottom:0;
+		width:100%;
+	}
+	.card-deck .card{
+		text-align:center;
+		padding-bottom:70px;
+		width: 33rem;
+	}
+	.card-deck{
+		padding-bottom:50px;
+	}
+	ul{text-align:left;}
 </style>
 
 <body>
@@ -57,18 +71,18 @@
 			<div class = "row">
 				<div class = "parent">
 					<div class = "col-sm-4">
-						<div class = "diagram-box" ng-class="{'op1-inactive' : option != 1, 'op1-active' : option == 1}" ng-click="toggle(1); switch(0)" >
+						<div class = "diagram-box op1" ng-class="{'op1-inactive' : option != 1, 'op1-active' : option == 1}" ng-click="toggle(1); switch(0)" >
 							<h2>I want someone to help me look for a job.</h2>
 							<p>I want to know what agencies can help me.</p>
 						</div>
 					</div>
-					<div class = "col-sm-4">
+					<div class = "col-sm-4 op2">
 						<div class = "diagram-box" ng-class="{'op2-inactive' : option != 2, 'op2-active' : option == 2}" ng-click=toggle(2)>
 							<h2>I want to do my own job search and apply for jobs online.</h2>
 							<p>I want to know what websites to look for jobs on.</p>
 						</div>
 					</div>
-					<div class = "col-sm-4">
+					<div class = "col-sm-4 op3">
 						<div class = "diagram-box" ng-class="{'op3-inactive' : option != 3, 'op3-active' : option == 3}" ng-click="toggle(3); switch(0)">
 							<h2>I want to start my own business.</h2>
 							<p>I want to find local and online resources and people to help me start a business</p>
@@ -115,7 +129,7 @@
 				</div>
 		</div>
 		<div class = "row">
-		<br>
+		<br><br>
 			<div ng-show="val == 1" class="ng-hide">
 				<div class = "row">
 					<h3>Employment Tips and Tools</h3>
@@ -125,42 +139,57 @@
 					communication skills.</p>
 				</div>
 				<div class="row">
-					<div class = "col-sm-4"> 
-						<div class = "diagram-box">
-							<a href="http://careeronestop.org/"><h3>Career One-Stop</h3></a>
-							<p>This website is a resource for job-seekers, including those with disabilities. You can search
+					<div class = "card-deck">
+						<div class="card">
+							<div class="card-block">
+								<h4 class="card-title">Career One-Stop</h4>
+								<p class="card-text">This website is a resource for job-seekers, including those with disabilities. <br><br>You can search
 							for jobs, explore different careers, get resume writing tips, job interview strategies, etc.</p>
+							</div>
+							<div class="card-footer">
+								<a href="http://careeronestop.org/" class="btn btn-primary">Check it out</a>
+							</div>
 						</div>
-					</div>
-					<div class = "col-sm-4"> 
-						<div class = "diagram-box">
-							<a href="http://askjan.org/"><h3>Job Accommodations Network (JAN)</h3></a>
-							<p>The Job Accommodation Network (JAN) is the leading source of free, expert, and
-							confidential guidance on workplace accommodations and disability employment.</p>
-							<p>It has a Searchable Online Accommodation Resource (SOAR) that lists types of
-							accommodations that might be helpful for specific disabilities.</p>
-							<p>It also has information on finding a job and starting your own business. </p>
+						
+						<div class="card">
+							<div class="card-block">
+								<h4 class="card-title">Job Accommodations Network (JAN)</h4>
+								<p class="card-text">The Job Accommodation Network (JAN) is the leading source of free, expert, and
+								confidential guidance on workplace accommodations and disability employment.
+								<br><br>It has a Searchable Online Accommodation Resource (SOAR) that lists types of
+								accommodations that might be helpful for specific disabilities.
+								<br><br>It also has information on finding a job and starting your own business. </p>
+							</div>
+							<div class="card-footer">
+								<a href="http://askjan.org/" class="btn btn-primary">Check it out</a>
+							</div>
 						</div>
-					</div>
-					
-					<div class = "col-sm-4">
-						<div class = "diagram-box">
-							<a href="http://www.disability.gov/"><h3>Disability.gov</h3></a>
-							<p>Disability.gov has a list of employment resources including a “Guide to Employment”.
-							It also has information on benefits, education, health, housing, technology, and
-							transportation for people with disabilities.</p>
+
+						<div class="card">
+							<div class="card-block">
+								<h4 class="card-title">Disability.gov</h4>
+								<p class="card-text">Disability.gov has a list of employment resources including a “Guide to Employment”.<br><br>It also has information on benefits, education, health, housing, technology, and
+								transportation for people with disabilities.</p>
+							</div>
+							<div class="card-footer">
+								<a href="http://www.disability.gov/" class="btn btn-primary">Check it out</a>
+							</div>
 						</div>
 					</div>
 				</div>
 				<div class="row">
-					<div class = "col-sm-4"></div>
-					<div class = "col-sm-4">
-						<div class = "diagram-box">
-							<a href="http://www.dol.gov/odep"><h3>ODEP</h3></a>
-							<p>The Office of Disability Employment Policy (ODEP) provides national leadership on
-							disability employment policy by developing and influencing the use of evidence-based
-							disability employment policies and practices, building collaborative partnerships, and
-							delivering authoritative and credible data on employment of people with disabilities.</p>
+					<div class = "card-deck">
+						<div class="card">
+							<div class="card-block">
+								<h4 class="card-title">ODEP</h4>
+								<p class="card-text">The Office of Disability Employment Policy (ODEP) provides national leadership on<ul>
+								<li>disability employment policy by developing and influencing the use of evidence-based
+								<li>disability employment policies and practices, building collaborative partnerships, and
+								<li>delivering authoritative and credible data on employment of people with disabilities.</ul></p>
+							</div>
+							<div class="card-footer">
+								<a href="http://www.dol.gov/odep" class="btn btn-primary">Check it out</a>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -175,54 +204,72 @@
 					their openings. All of the job search sites are free and they won’t charge you a fee to register.</p>
 				</div>
 				<div class = "row">
-					<div class = "col-sm-4"> 
-						<div class = "diagram-box">
-							<a href="http://www.gettinghired.com/"><h3>Getting Hired</h3></a>
-							<p>GettingHired was launched in 2008 with the sole purpose of helping people with
-							disabilities find a job. You will definitely find local job openings on this site. You can
-							also search their job openings without having to complete their registration form.
-							Registration is free.</p>
+					<div class = "card-deck">
+						<div class="card">
+							<div class="card-block">
+								<h4 class="card-title">Getting Hired</h4>
+								<p class="card-text">GettingHired was launched in 2008 with the sole purpose of helping people with
+								disabilities find a job. <br><br>You will definitely find local job openings on this site. You can also search their job openings without having to complete their registration form.<br><br>Registration is free.</p>
+							</div>
+							<div class="card-footer">
+								<a href="http://www.gettinghired.com/" class="btn btn-primary">Check it out</a>
+							</div>
 						</div>
-					</div>
-					<div class = "col-sm-4">
-						<div class = "diagram-box">
-							<a href="http://www.thinkbeyondthelabel.com/"><h3>Think Beyond the Label</h3></a>
-							<p>Think Beyond the Label connects job seekers with businesses who are actively recruiting
-							job candidates with disabilities. There are a lot of local job openings listed on this site.
-							Also, they don’t require you to register on their site in order to search their job openings.
-							Registration is free.</p>
+						
+						<div class="card">
+							<div class="card-block">
+								<h4 class="card-title">Think Beyond the Label</h4>
+								<p class="card-text">Think Beyond the Label connects job seekers with businesses who are actively recruiting
+								job candidates with disabilities. There are a lot of local job openings listed on this site.<br><br>
+								Also, they don’t require you to register on their site in order to search their job openings.<br><br>
+								Registration is free.</p>
+							</div>
+							<div class="card-footer">
+								<a href="http://www.thinkbeyondthelabel.com/" class="btn btn-primary">Check it out</a>
+							</div>
 						</div>
-					</div>
-					<div class = "col-sm-4">
-						<div class = "diagram-box">
-							<a href="http://abilityjobs.com/"><h3>ABILITY Jobs (Formerly JobAccess)</h3></a>
-							<p>ABILITY Jobs is the largest job board for job seekers with disabilities. ABILITY Jobs has a
-							long history of bringing employers and job seekers with disabilities together. They
-							require you to register with them before you can search their job openings.
-							Registration is free.</p>
+						<div class="card">
+							<div class="card-block">
+								<h4 class="card-title">ABILITY Jobs (Formerly JobAccess)</h4>
+								<p class="card-text">ABILITY Jobs is the largest job board for job seekers with disabilities. ABILITY Jobs has a
+								long history of bringing employers and job seekers with disabilities together. They
+								require you to register with them before you can search their job openings.
+								<br><br>Registration is free.</p>
+							</div>
+							<div class="card-footer">
+								<a href="http://abilityjobs.com/" class="btn btn-primary">Check it out</a>
+							</div>
 						</div>
 					</div>
 				</div>
 				<div class = "row">
-					<div class = "col-sm-4">
-						<div class = "diagram-box">
-							<a href="http://www.cosdonline.org/"><h3>Career Opportunities to Students with Disabilities - COSD Career Gateway</h3></a>
-							<p>COSD is only for college students with disabilities.
-							COSD’s Career Gateway lets college students with disabilities search for job openings.
-							Their website offers webinars for both employers and students with disabilities.
-							COSD also holds conferences each year for employers and students with disabilities.
-							Registration is free.</p>
+					<div class = "card-deck">
+						<div class="card">
+							<div class="card-block">
+								<h4 class="card-title">Career Opportunities to Students with Disabilities - COSD Career Gateway</h4>
+								<p class="card-text">COSD is only for college students with disabilities.
+								COSD’s Career Gateway lets college students with disabilities search for job openings.
+								Their website offers webinars for both employers and students with disabilities.
+								COSD also holds conferences each year for employers and students with disabilities.
+								Registration is free.</p>
+							</div>
+							<div class="card-footer">
+								<a href="http://www.cosdonline.org/" class="btn btn-primary">Check it out</a>
+							</div>
 						</div>
-					</div>
-					<div class = "col-sm-4"></div>
-					<div class = "col-sm-4">
-						<div class = "diagram-box">
-							<a href="http://disability.jobs/"><h3>Disability Jobs</h3></a>
-							<p>The job openings on this site are from companies that want to hire of people with
-							disabilities. This is a my.jobs microsite and it’s sponsored by the Society for Human
-							Resource Management (SHRM). You can search job openings without registering.
-							Registration is free.</p>
+						<div class="card">
+							<div class="card-block">
+								<h4 class="card-title">Disability Jobs</h4>
+								<p class="card-text">The job openings on this site are from companies that want to hire of people with
+								disabilities. This is a my.jobs microsite and it’s sponsored by the Society for Human
+								Resource Management (SHRM). You can search job openings without registering.
+								Registration is free.</p>
+							</div>
+							<div class="card-footer">
+								<a href="http://disability.jobs/" class="btn btn-primary">Check it out</a>
+							</div>
 						</div>
+
 					</div>
 				</div>
 			</div>
@@ -233,34 +280,49 @@
 					<p> You will find interest inventories and career
 					assessments to help you decide what type of work you’d like to do.</p>
 				</div>
-				<div class = "col-sm-4">
-					<div class = "diagram-box">
-						<a href="http://www.onetonline.org/"><h3>O*NET</h3></a>
-						<p>The Occupational Information Network (O*NET) is the nation's primary source of job
-						information.</p>
-						<p>O*NET On-Line is an interactive application for exploring and searching different jobs
-						and career areas.</p>
-						<p>The O*NET database has information on jobs, such as wage rate, job description,
-						physical and educational requirements, etc. The database is available at no cost.</p>
-					</div>
-				</div>
-				<div class = "col-sm-4">
-					<div class = "diagram-box">
-						<a href="http://www.mynextmove.org/"><h3>My Next Move</h3></a>
-						<p>My Next Move can help you find out what your interests are and how they relate to
-						the world of work. You’ll find job and career options that are a good match for your
-						interests and work experience. You’ll also have an opportunity to explore and search
-						different career fields. My Next Move is part of O*NET.</p>
-					</div>
-				</div>
-				<div class = "col-sm-4">
-					<div class = "diagram-box">
-						<a href="http://adata.org/"><h3>ADA National Network (formerly DBTAC)</h3></a>
-						<p>The ADA National Network provides information, guidance and training on the
-						Americans with Disabilities Act (ADA). This is not an enforcement or regulatory agency,
-						but a helpful resource supporting the ADA’s mission to “make it possible for everyone
-						with a disability to live a life of freedom and equality.”</p>
-						<p>(Formerly known as DBTAC, the Disability and Business Technical Assistance Center.)</p>
+				<div class = "row">
+					<div class = "card-deck">
+						<div class="card">
+								<div class="card-block">
+									<h4 class="card-title">O*NET</h4>
+									<p class="card-text">The Occupational Information Network (O*NET) is the nation's primary source of job
+									information.
+									<br><br>O*NET On-Line is an interactive application for exploring and searching different jobs
+									and career areas.
+									<br><br>The O*NET database has information on jobs, such as wage rate, job description,
+									physical and educational requirements, etc. The database is available at no cost.</p>
+								</div>
+								<div class="card-footer">
+									<a href="http://www.onetonline.org/" class="btn btn-primary">Check it out</a>
+								</div>
+						</div>
+						
+						<div class="card">
+								<div class="card-block">
+									<h4 class="card-title">My Next Move</h4>
+									<p class="card-text">My Next Move can help you find out what your interests are and how they relate to
+									the world of work. You’ll find job and career options that are a good match for your
+									interests and work experience. You’ll also have an opportunity to explore and search
+									different career fields. My Next Move is part of O*NET.</p>
+								</div>
+								<div class="card-footer">
+									<a href="http://www.mynextmove.org/" class="btn btn-primary">Check it out</a>
+								</div>
+						</div>
+						
+						<div class="card">
+								<div class="card-block">
+									<h4 class="card-title">ADA National Network (formerly DBTAC)</h4>
+									<p class="card-text">The ADA National Network provides information, guidance and training on the
+									Americans with Disabilities Act (ADA). This is not an enforcement or regulatory agency,
+									but a helpful resource supporting the ADA’s mission to “make it possible for everyone
+									with a disability to live a life of freedom and equality.”
+									<br><br>(Formerly known as DBTAC, the Disability and Business Technical Assistance Center.)</p>
+								</div>
+								<div class="card-footer">
+									<a href="http://adata.org/" class="btn btn-primary">Check it out</a>
+								</div>
+						</div>
 					</div>
 				</div>
 			</div>
