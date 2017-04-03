@@ -28,7 +28,7 @@
   <body ng-controller="GTExcelController">
 
     <!-- Fixed navbar -->
-      <nav class="navbar navbar-default navbar-fixed-top">
+      <nav class="navbar navbar-default navbar-static-top">
         <div class="container">
           <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed"data-toggle="nav" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -43,10 +43,29 @@
         
             <div id="navbar" class="navbar-collapse nav">
               <ul class="nav navbar-nav">
-                <li class = "job"><a href="#/jobsearch">Looking for Jobs</a></li>
+                <li class="job">
+                  <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Jobs</a>
+                  <ul class="dropdown-menu">
+                    <li><a href="#/jobsearch" ng-click = "jobSearchButton()">Looking for a Job?</a></li>
+                    <li><a href="#/form" ng-click = "jobSearchButton()">Posting a Job?</a></li>
+                  </ul>
+                </li>
                 <li class = "local"><a href="#/local">Local Resources</a></li>
-                <li class = "benefits"><a href="#/benefits">Government Benefits</a></li>
-                <li class = "fed"><a href="#/fed_hire">Federal Hiring</a></li>
+                <li class="benefits">
+                  <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Government Benefits </a>
+                  <ul class="dropdown-menu">
+                    <li><a href="#/benefits/#/question" ng-click = "benefitsButton()">Your Benefits</a></li>
+                    <li><a href="#/benefits/#/counselor" ng-click = "benefitsButton()">Locate Your Benefits</a></li>
+                  </ul>
+                </li>
+                <li class="fed">
+                  <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Federal Hiring</a>
+                  <ul class="dropdown-menu">
+                    <li><a href="#/fed_hire/#/top" ng-click = "fedButton()">Does the Federal Government Hire People with Diabilities?</a></li>
+                    <li><a href="#/fed_hire/#/hiring" ng-click = "fedButton()">Schedule A Hiring Process</a></li>
+                    <li><a href="#/fed_hire/#/resume" ng-click = "fedButton()">Sending Your Resume</a></li>
+                  </ul>
+                </li>
                 <li class = "busi"><a href="#/business">Starting a Business</a></li>
                 <li class = "about"><a href="#/about">About Us</a></li>
           
@@ -57,8 +76,13 @@
         
     <!-- The dynamic portion, it reads form the routeProvider in the app.js and tells it what html file it should display-->
     <div class = "container">
+
+      <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" rel="stylesheet" crossorigin="anonymous">
+      
       <div ng-view></div>
     </div>
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
 
     
 
@@ -68,8 +92,18 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
     <script src="js/bootstrap.min.js"></script>
+
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="js/ie10-viewport-bug-workaround.js"></script>
+
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
 
     <!-- Angular scripts -->
     <script src="js/angular.min.js"></script> <!-- Angular Script -->

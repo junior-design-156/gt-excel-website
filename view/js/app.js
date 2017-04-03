@@ -30,6 +30,9 @@ gtexcelApp.config(['$routeProvider', '$locationProvider', '$controllerProvider',
 		.when('/fed_hire', {
 			templateUrl: 'fed_hire.html'
 		})
+		.when('/form', {
+			templateUrl: 'form.html'
+		})
 		.otherwise({
 			templateUrl: 'home.html'
 		});
@@ -40,6 +43,35 @@ gtexcelApp.controller('GTExcelController', function($scope){
 	$scope.homeButton = function(){
 		$(".nav").find(".active").removeClass("active");
 	};
+	
+	$scope.aboutButton = function(){
+	   	$(".nav").find(".active").removeClass("active");
+	   	$(".nav").find(".about").addClass("active");
+	};
+
+	$scope.benefitsButton = function(){
+	   	$(".nav").find(".active").removeClass("active");
+	   	$(".nav").find(".benefits").addClass("active");
+	};
+	$scope.fedButton = function(){
+	   	$(".nav").find(".active").removeClass("active");
+	   	$(".nav").find(".fed").addClass("active");
+	};
+
+	$scope.jobSearchButton = function(){
+	   	$(".nav").find(".active").removeClass("active");
+	   	$(".nav").find(".job").addClass("active");
+	};
+	$scope.businessButton = function(){
+	   	$(".nav").find(".active").removeClass("active");
+	   	$(".nav").find(".busi").addClass("active");
+	};
+
+	$scope.localButton = function(){
+	   	$(".nav").find(".active").removeClass("active");
+	   	$(".nav").find(".local").addClass("active");
+	};
+
 });
 
 gtexcelApp.controller('JobSearchController', function JobSearchController($scope){
@@ -60,6 +92,13 @@ gtexcelApp.controller('JobSearchController', function JobSearchController($scope
 
 });
 
+gtexcelApp.controller('JobSearchLinkController', function JobSearchLinkController($scope){
+	$scope.val = 0;
+	$scope.switch = function(val) {
+		$scope.val = val;
+	};
+});
+
 gtexcelApp.controller('BenefitsCounselorController', function BenefitsCounselorController($scope){
 	$scope.option = 0;
 	$scope.toggle = function(val) {
@@ -67,9 +106,23 @@ gtexcelApp.controller('BenefitsCounselorController', function BenefitsCounselorC
 	};
 });
 
+
+
 gtexcelApp.controller('BenefitsInfoController', function BenefitsInfoController($scope){
 	$scope.option = 1;
 	$scope.toggle = function(val) {
 		$scope.option = val;
 	};
 });
+
+//gtexcelApp.controller('FormController', ['$scope', '$http', function($scope, $http) {
+//    $scope.submitted = false;
+//    $http.defaults.headers.post['Content-Type'] = 'application/json';
+//    $scope.submit = function(listing) {
+//        $http.post('http://localhost:8080/index.html#/form', listing, {})
+//            .success(function() {
+//                console.log('thing was submitted');
+//                $scope.submitted = true;
+//            });
+//    };
+//}]);
