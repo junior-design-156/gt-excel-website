@@ -2,12 +2,12 @@
 var express = require('express');
 var bodyParser = require('body-parser');
 var jobRouter = require('./routes/router');
-//var mongoose = require('mongoose');
+var mongoose = require('mongoose');
 var path = require('path');
 var view = path.resolve(__dirname+'/view');
 
-//mongoose.Promise = global.Promise;
-//mongoose.connect('mongodb://localhost/excel-job-search-toolkit');
+mongoose.Promise = global.Promise;
+mongoose.connect('mongodb://localhost/excel-job-search-toolkit');
 
 var app = express();
 app.use(express.static(view));
