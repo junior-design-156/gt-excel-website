@@ -43,16 +43,29 @@
         
             <div id="navbar" class="navbar-collapse nav">
               <ul class="nav navbar-nav">
-                <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Jobs <span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                      <li><a href="#/jobsearch">Looking for a Job?</a></li>
-                      <li><a href="#/form">Posting a Job?</a></li>
-                    </ul>
+                <li class="job">
+                  <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Jobs</a>
+                  <ul class="dropdown-menu">
+                    <li><a href="#/jobsearch" ng-click = "jobSearchButton()">Looking for a Job?</a></li>
+                    <li><a href="#/form" ng-click = "jobSearchButton()">Posting a Job?</a></li>
+                  </ul>
                 </li>
                 <li class = "local"><a href="#/local">Local Resources</a></li>
-                <li class = "benefits"><a href="#/benefits">Government Benefits</a></li>
-                <li class = "fed"><a href="#/fed_hire">Federal Hiring</a></li>
+                <li class="benefits">
+                  <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Government Benefits </a>
+                  <ul class="dropdown-menu">
+                    <li><a href="#/benefits/#/question" ng-click = "benefitsButton()">Your Benefits</a></li>
+                    <li><a href="#/benefits/#/counselor" ng-click = "benefitsButton()">Locate Your Benefits</a></li>
+                  </ul>
+                </li>
+                <li class="fed">
+                  <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Federal Hiring</a>
+                  <ul class="dropdown-menu">
+                    <li><a href="#/fed_hire/#/top" ng-click = "fedButton()">Does the Federal Government Hire People with Diabilities?</a></li>
+                    <li><a href="#/fed_hire/#/hiring" ng-click = "fedButton()">Schedule A Hiring Process</a></li>
+                    <li><a href="#/fed_hire/#/resume" ng-click = "fedButton()">Sending Your Resume</a></li>
+                  </ul>
+                </li>
                 <li class = "busi"><a href="#/business">Starting a Business</a></li>
                 <li class = "about"><a href="#/about">About Us</a></li>
           
