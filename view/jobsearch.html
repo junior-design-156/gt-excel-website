@@ -18,9 +18,6 @@
 		text-align: center;
 	}
 
-	.row {
-		padding: 10px;
-	}
 	
 	.card:hover {
 		border: 5px solid #ccc;
@@ -51,6 +48,17 @@
 		padding-bottom:50px;
 	}
 	ul{text-align:left;}
+	
+	.local-color {
+		background-color: #00af64;
+	}
+	.job-color {
+		background-color: #ff9500;
+	}
+	.business-color {
+		background-color: #7309aa;
+	}
+	
 </style>
 
 <body>
@@ -58,7 +66,7 @@
 		<div class = "jumbotron text-center" style="width: 103rem"> 
 			<h1> How do you want to find a job? </h1>
 		</div>
-		<hr class="featurette-divider">
+		<br><br><br>
 		<div ng-controller="JobSearchController" ng-init="option = 0">
 			<div class = "row">
 				<div class = "card-deck">
@@ -70,39 +78,36 @@
 					<div class="card" ng-click=toggle(2)>
 						
 						<img class="card-img-top" src="image/comp.png">
-						<div class="card-footer f-text">I want to do my own job search and apply online.</div>
+						<div class="card-footer f-text">I want to do my own job search and apply online</div>
 					</div>
 					<div class="card" ng-click="toggle(3); switch(0)">
 						
 						<img class="card-img" src="image/brief.png">
-						<div class="card-footer f-text">I want to start my own business.</div>
+						<div class="card-footer f-text">I want to start my own business</div>
 					</div>
 				</div>
 				
-				<div class = "row" ng-show="option == 1" class="ng-hide">
-					<div class="card" style="border-color: #057d05; background-color: #057d05; width: 105rem;" ng-click = "localButton()">
-							<a href="#/local" ng-click = "localButton()"><div class = "card-text f-text" style="padding-top: 30px; color: white;">Try contacting one of the agencies listed on the Local Resources page.</div></a>
+				<div class = "row card-deck" ng-show="option == 1" class="ng-hide">
+					<div class="card local-color" style="width: 99rem;" ng-click = "localButton()">
+							<a href="#/local" ng-click = "localButton()"><div class = "card-text f-text" style="padding-top: 30px; color: white;">Try contacting one of the agencies listed on the Local Resources page</div></a>
 					</div>
 				</div>
-				<div class = "row" ng-show="option == 3" class="ng-hide">
-					<div class="card" style="border-color: #9932e4; background-color: #9932e4; width: 105rem;" ng-click = "localButton()">
-							<a href="#/business" ng-click = "businessButton()"><div class = "card-text f-text" style="padding-top: 30px; color: white;">Check out our Starting a Business page to view available resources.</div></a>
+				<div class = "row card-deck" ng-show="option == 3" class="ng-hide">
+					<div class="card business-color" style="width: 99rem;" ng-click = "localButton()">
+							<a href="#/business" ng-click = "businessButton()"><div class = "card-text f-text" style="padding-top: 30px; color: white;">Check out our Starting a Business page to view available resources</div></a>
 					</div>
 				</div>
 					
-				<div class = "row" ng-show="option == 2" class="ng-hide">
-					<div class = "card-deck" >
-						<div class = "card" ng-click=switch(1) style="border-color: #e67902; background-color: #e67902;">
+				<div class = "row card-deck" ng-show="option == 2" class="ng-hide">
+						<div class = "card job-color" ng-click=switch(1) style="width: 32rem;">
 							<div class = "card-text f-text" style="padding-top: 50px; color: white;">Resume and Interview Preparation</div>
 						</div>
-						<div class = "card" ng-click=switch(2) style="border-color: #e67902; background-color: #e67902;">
+						<div class = "card job-color" ng-click=switch(2) style="width: 32rem;">
 							<div class = "card-text f-text" style="padding-top: 70px; color: white;">Job Searching Websites</div>
 						</div>
-						<div class = "card" ng-click=switch(3) style="border-color: #e67902; background-color: #e67902;">
+						<div class = "card job-color" ng-click=switch(3) style="width: 32rem;">
 							<div class = "card-text f-text" style="padding-top: 70px; color: white;">Online Vocational Guidance</div>
 						</div>
-						
-					</div>
 				</div>
 		<div class = "row">
 		<br><br>
