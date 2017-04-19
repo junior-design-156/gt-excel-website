@@ -1,40 +1,25 @@
-
 <style>
+	.card-footer{
+		position:absolute;
+		bottom:0;
+		width:100%;
+	}
+
+	.card{
+		text-align:center;
+		padding-bottom:50px;
+	}
+	.card-deck{
+		padding-bottom:50px;
+	}
+	ul{text-align:left;}
+	
 	.diagram{
 		text-align: center;
 	}
 
-	.diagram-box {
-		margin: 20px;
-		border: 1px solid #ccc;
-		padding: 10px 10px 10px 10px;
-		background-color: white;
-	}
-
-	.row {
-		padding: 10px;
-	}
-
-	.op1-inactive{background-color:#fffff2;}
-	.op2-inactive{background-color: #ffe8e8;}
-	.op3-inactive{background-color:#e8ffff;}
 	
-	.op1-active{background-color:#ffffa5;}
-	.op2-active{background-color: #ffcccc;}
-	.op3-active{background-color:#b3ffff;}
-
-	.parent .diagram-box {
-		width: 280px;
-		height: 250px;
-	}
-	
-	.child .diagram-box {
-		margin-top: 35px;
-		height: 80px;
-		width: 280px;
-	}
-	
-	.diagram-box:hover {
+	.card:hover {
 		border: 5px solid #ccc;
 	}
 
@@ -44,6 +29,8 @@
 	}
 
 	h2 {font-size: 22px}
+	.f-text{font-size: 22px;
+		font-weight: bold;}
 	h3 {font-size: 18px;
 		margin-top 20px;}
 		
@@ -61,78 +48,72 @@
 		padding-bottom:50px;
 	}
 	ul{text-align:left;}
+	
+	.local-color {
+		background-color: #00af64;
+	}
+	.job-color {
+		background-color: #ff9500;
+	}
+	.business-color {
+		background-color: #7309aa;
+	}
+	
 </style>
 
 <body>
 	<div class="diagram" ng-controller="JobSearchLinkController" ng-init="val = 0">
-		<h2 class="featurette-heading">How do you want to find a job?</h2>
-		<hr class="featurette-divider">
+		<div class = "jumbotron text-center" style="width: 103rem"> 
+			<h1> How do you want to find a job? </h1>
+		</div>
+		<br><br><br>
 		<div ng-controller="JobSearchController" ng-init="option = 0">
 			<div class = "row">
-				<div class = "parent">
-					<div class = "col-sm-4">
-						<div class = "diagram-box op1" ng-class="{'op1-inactive' : option != 1, 'op1-active' : option == 1}" ng-click="toggle(1); switch(0)" >
-							<h2>I want someone to help me look for a job.</h2>
-							<p>I want to know what agencies can help me.</p>
-						</div>
-					</div>
-					<div class = "col-sm-4 op2">
-						<div class = "diagram-box" ng-class="{'op2-inactive' : option != 2, 'op2-active' : option == 2}" ng-click=toggle(2)>
-							<h2>I want to do my own job search and apply for jobs online.</h2>
-							<p>I want to know what websites to look for jobs on.</p>
-						</div>
-					</div>
-					<div class = "col-sm-4 op3">
-						<div class = "diagram-box" ng-class="{'op3-inactive' : option != 3, 'op3-active' : option == 3}" ng-click="toggle(3); switch(0)">
-							<h2>I want to start my own business.</h2>
-							<p>I want to find local and online resources and people to help me start a business</p>
-						</div>
-					</div>
-				</div>
-			</div>
-			<hr class="featurette-divider">
-			<div class = "child">
-				<div class = "row">
-					<div class="col-sm-4">
-						<div class = "diagram-box" ng-class="{'op1-inactive' : option != 1, 'op1-active' : option == 1}">
-							<a href="#/local" ng-click = "localButton()"><p> Try contacting an agency listed on the Local Resources page.</p></a>
-						</div>
-					</div>
-					<div class = "col-sm-4"></div>
-					<div class = "col-sm-4">
-							<div class = "diagram-box" ng-class="{'op3-inactive' : option != 3, 'op3-active' : option == 3}">
-								<a href="#/business" ng-click = "businessButton()"><p>Check out the resources available on the Starting a Business page.</p></a>
-							</div>
-					</div>
-				</div>
-					
-				
-					<div class = "op2-group" >
-						<div class = "col-sm-4">
-							<div class = "diagram-box" ng-click=switch(1) ng-class="{'op2-inactive' : option != 2, 'op2-active' : option == 2}">
-								<p>Resume and Interview Preparation</p>
-							</div>
-						</div>
-						<div class = "col-sm-4">
-							<div class = "diagram-box" ng-click=switch(2) ng-class="{'op2-inactive' : option != 2, 'op2-active' : option == 2}">
-								<p>Job Searching Websites</p>
-							</div>
-						</div>
-						<div class = "col-sm-4">
-							<div class = "diagram-box" ng-click=switch(3) ng-class="{'op2-inactive' : option != 2, 'op2-active' : option == 2}">
-								<p>Online Vocational Guidance</p>
-							</div>
-						</div>
+				<div class = "card-deck">
+					<div class="card" ng-click="toggle(1); switch(0)">
+						<img class="card-img" src="image/help.png">
+						<div class="card-footer f-text">I want someone to help me look for a job</div>
 						
 					</div>
-					
+					<div class="card" ng-click=toggle(2)>
+						
+						<img class="card-img-top" src="image/comp.png">
+						<div class="card-footer f-text">I want to do my own job search and apply online</div>
+					</div>
+					<div class="card" ng-click="toggle(3); switch(0)">
+						
+						<img class="card-img" src="image/brief.png">
+						<div class="card-footer f-text">I want to start my own business</div>
+					</div>
 				</div>
-		</div>
+				
+				<div class = "row card-deck" ng-show="option == 1" class="ng-hide">
+					<div class="card local-color" style="width: 99rem;" ng-click = "localButton()">
+							<a href="#/local" ng-click = "localButton()"><div class = "card-text f-text" style="padding-top: 30px; color: white;">Try contacting one of the agencies listed on the Local Resources page</div></a>
+					</div>
+				</div>
+				<div class = "row card-deck" ng-show="option == 3" class="ng-hide">
+					<div class="card business-color" style="width: 99rem;" ng-click = "localButton()">
+							<a href="#/business" ng-click = "businessButton()"><div class = "card-text f-text" style="padding-top: 30px; color: white;">Check out our Starting a Business page to view available resources</div></a>
+					</div>
+				</div>
+					
+				<div class = "row card-deck" ng-show="option == 2" class="ng-hide">
+						<div class = "card job-color" ng-click=switch(1) style="width: 32rem;">
+							<div class = "card-text f-text" style="padding-top: 50px; color: white;">Resume and Interview Preparation</div>
+						</div>
+						<div class = "card job-color" ng-click=switch(2) style="width: 32rem;">
+							<div class = "card-text f-text" style="padding-top: 70px; color: white;">Job Searching Websites</div>
+						</div>
+						<div class = "card job-color" ng-click=switch(3) style="width: 32rem;">
+							<div class = "card-text f-text" style="padding-top: 70px; color: white;">Online Vocational Guidance</div>
+						</div>
+				</div>
 		<div class = "row">
 		<br><br>
 			<div ng-show="val == 1" class="ng-hide">
-				<div class = "row">
-					<h3>Employment Tips and Tools</h3>
+				<div class = "row" style="width: 103rem">
+					<h3><b>Employment Tips and Tools</b></h3>
 					<!--Only added some from diagram and book pg. 47-->
 					<p>There is information on assistive technology, how to request job
 					accommodations, interviewing techniques, resume writing and
@@ -196,8 +177,8 @@
 			</div>
 		
 			<div ng-show="val == 2" class="ng-hide">
-				<div class = "row">
-					<h3>Job Searching Websites</h3>
+				<div class = "row" style="width: 103rem">
+					<h3><b>Job Searching Websites</b></h3>
 					<!--Only added the first 5 from page 28-->
 					<p>Many of the job sites can only be used by people with disabilities.
 					Some sites will require you to register on their website before you can search
@@ -274,8 +255,8 @@
 				</div>
 			</div>
 			<div ng-show="val == 3" class="ng-hide">
-				<div class = "row">
-					<h3>Online Vocational Guidance</h3>
+				<div class = "row" style="width: 103rem">
+					<h3><b>Online Vocational Guidance</b></h3>
 					<!--Only added the first 5 from page 28-->
 					<p> You will find interest inventories and career
 					assessments to help you decide what type of work you’d like to do.</p>
