@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+
+<html ng-app="jobForm">
+
+    <h2 class="featurette-heading text-center" >Post Your Job Listing</h2>
+    <hr class="featurette-divider">
+        <form data-ng-controller="formController">
+            <div class="form-group">
+                <label>Organization Title</label>
+                <input type="text" ng-model="listing.orgTitle" class="form-control" aria-describedby="orgHelp" 
+                    placeholder="Enter Organization Title" required/>
+            </div>
+            <div class = "form-group">
+                <label>Job Title </label>
+                <input type="text" ng-model="listing.jobTitle" class="form-control" aria-describedby="jobHelp" 
+                    placeholder="Enter Job Title" required/>
+            </div>
+            <div class = "form-group">
+
+                <br><label>Job Description </label><br>
+                <textarea ng-model="listing.jobDescription" class="form-control" rows = "5" aria-describedby="jobHelp" 
+                    placeholder="Enter Job Description" required/>
+            </div>
+            <div>
+                <label>Contact Info</label></br>
+            </div>
+            <div class = "form-group">
+                <label>E-mail:</label>
+                <input type="email" ng-model="listing.contactInfo.email" class="form-control" aria-describedby="jobHelp" 
+                    placeholder="Enter Email" required/>
+            </div>
+            <div class = "form-group">
+                <label>Phone:</label>
+                <input type="text" ng-model="listing.contactInfo.phone" class="form-control" aria-describedby="jobHelp" 
+                    placeholder="Enter Phone Number" required/>
+            </div>
+            <div class = "form-group">
+                <!--<input type="submit" id="submit" ng-click="submit(listing)" class="btn btn-primary" value="Submit">-->
+                <input type="submit" ng-click="submit(listing)" value="Submit"/>
+                <!--<button type="submit" ng-submit="submit(listing)" class = "btn btn-primary" value="Submit">Submit</button>-->
+            </div>
+            <div ng-show="submitted" class="ng-hide">Listing submitted. Please check your email for confirmation.</div> 
+        </form>
+    </div>
+    </body>
+</html>
