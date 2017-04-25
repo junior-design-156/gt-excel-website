@@ -16,15 +16,17 @@ Known Bugs:<br />
 1. Facebook plugin on home page doesn’t load immediately requires page refresh occasionally <br />
 <br />
 -----------Running the Site-------------------------------------------------------------------------------------
-
+<br />
 <br />
 To run the site:<br />
+<br />
 1. clone the repo<br />
 2. in the project directory, run `npm install`<br />
 3. in the project directory, add a folder name 'data' (if not already there)
 4. in another terminal, in the same directory, run `mongod --dbpath ./data`<br />
 5. in the first terminal again, run `npm start`<br />
 6. in a browser, navigate to localhost:8080<br />
+<br />
 <br />
 
 -----------STUFF TO DOWNLOAD-------------------------------------------------------------------------------------
