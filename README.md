@@ -3,7 +3,6 @@
 Version 1.05 Release Notes: <br />
 <br />
 The latest features in this release are:<br />
-<br />
 1. Added map to local resources page<br />
 2. Improved Job Posting form functions and reliability<br />
 3. Added organization information posting form (allows organization to request space on the site)<br />
