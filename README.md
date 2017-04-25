@@ -46,15 +46,17 @@
 
 1. Navigate to the html file located in view/jobsearch.html
 2. Format the information to look like the following:
-        <div class=”card”>
-		    <div class=”card block”>
-			    <h4 class=”card-title”> NAME OF SITE </h4>
-			    <p class=”card-text”> DESCRIPTION OF SITE</p>
-            </div>
-            <div class=”card-footer”>
-                <a href= URL OF SITE class=”btn btn-primary”>Check it out</a>
-            </div>
-	    </div>
+	
+		<div class=”card”>
+    	    "<div class=”card block”>"
+			"<h4 class=”card-title”> NAME OF SITE </h4>"
+			"<p class=”card-text”> DESCRIPTION OF SITE</p>"
+		    "</div>"
+		    "<div class=”card-footer”>"
+			"<a href= URL OF SITE class=”btn btn-primary”>Check it out</a>"
+		    "</div>"
+		"</div>"
+	    
 
 Add this code to the code for the last website in the html file
 
@@ -77,7 +79,6 @@ Add this code to the code for the last website in the html file
 1. Put the images you would like to use in the images folder in the view folder of the project. 
 2. Add the image files to the folder view/image
 3. Add this code to the place you want the image to be
-4. <img src="image/(name of picture)>
-    1. Ex. <img src="image/ken.jpg">
+ 		<img src="image/(name of picture)> 
 
 If the image is too big or small it needs to be changed manually using Photoshop, Windows Paint, or any program that can change the image size.
