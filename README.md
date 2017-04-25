@@ -1,6 +1,6 @@
 # gt-excel-website
 
-Version 1.05 Release Notes: <br />
+<b>Version 1.05 Release Notes:</b> <br />
 <br />
 The latest features in this release are:<br />
 1. Added map to local resources page<br />
@@ -8,16 +8,16 @@ The latest features in this release are:<br />
 3. Added organization information posting form (allows organization to request space on the site)<br />
 4. Added jump to top arrow for each page<br />
 <br />
-Bug Fixes:<br />
+<b>Bug Fixes:</b><br />
 1. Accordion collapse function fixed for federal hiring page<br />
 <br />
-Known Bugs:<br />
+<b>Known Bugs:</b><br />
 1. Facebook plugin on home page doesn’t load immediately requires page refresh occasionally <br />
 <br />
------------Running the Site-------------------------------------------------------------------------------------
+
 <br />
 <br />
-To run the site:<br />
+<b>To run the site:</b><br />
 <br />
 1. clone the repo<br />
 2. in the project directory, run `npm install`<br />
@@ -30,14 +30,14 @@ To run the site:<br />
 
 -----------STUFF TO DOWNLOAD-------------------------------------------------------------------------------------
 
-Node.js & NPM https://nodejs.org/en/download/
+<b>Node.js & NPM</b> https://nodejs.org/en/download/
 
     NPM is what we'll use for dependency tracking. Whenever you pull the repo down, it won't include up-to-date 
     modules, only an updated list of modules required. So calling NPM install will locally install everything the 
     program 'requires' to do its thing. Express and Angular are dependencies that our package manager (NPM) will 
     install for us. Then node is just our interpreter.
 ------------------------------------------------------------------------------------------------------------------
-MongoDB https://www.mongodb.com/download-center?jmp=docs&_ga=1.143336054.2145130091.1484885366#community 
+<b>MongoDB</b> https://www.mongodb.com/download-center?jmp=docs&_ga=1.143336054.2145130091.1484885366#community 
 
     You'll need to run the mongo server for the site to work. Download the directory. Keep it wherever, they're 
     just binary executables. Add the bin directory to your path if necessary. Then you have to initialize the 
