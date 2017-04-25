@@ -15,7 +15,7 @@ Bug Fixes:<br />
 Known Bugs:<br />
 1. Facebook plugin on home page doesn’t load immediately requires page refresh occasionally <br />
 <br />
-
+-----------Running the Site-------------------------------------------------------------------------------------
 To run the site:<br />
 1. clone the repo<br />
 2. in the project directory, run `npm install`<br />
