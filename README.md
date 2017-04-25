@@ -1,16 +1,16 @@
 # gt-excel-website
 
-Version 1.05 Release Notes:
-The latest features in this release are:
-    Added map to local resources page
-    Improved Job Posting form functions and reliability
-    Added organization information posting form (allows organization to request space on the site)
-    Added jump to top arrow for each page
-Bug Fixes:
-    Accordion collapse function fixed for federal hiring page
-Known Bugs:
-    Facebook plugin on home page doesn’t load immediately requires page refresh occasionally 
-
+Version 1.05 Release Notes: <br />
+The latest features in this release are:<br />
+    1. Added map to local resources page<br />
+    2. Improved Job Posting form functions and reliability<br />
+    3. Added organization information posting form (allows organization to request space on the site)<br />
+    4. Added jump to top arrow for each page<br />
+Bug Fixes:<br />
+    1. Accordion collapse function fixed for federal hiring page<br />
+Known Bugs:<br />
+    1. Facebook plugin on home page doesn’t load immediately requires page refresh occasionally <br />
+<br />
 
 To run the site:<br />
 1. clone the repo<br />
