@@ -19,4 +19,4 @@ var schema = new Schema({
     }
 });
 
-module.exports = mongoose.model('submission', schema);
+module.exports = mongoose.model('jobListing', schema);

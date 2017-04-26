@@ -1,7 +1,8 @@
 'use strict';
 var express = require('express');
 var bodyParser = require('body-parser');
-var jobRouter = require('./routes/router');
+var jobListingRouter = require('./routes/jobListingRouter');
+var localResourceRouter = require('./routes/localResourceRouter');
 var mongoose = require('mongoose');
 var path = require('path');
 var view = path.resolve(__dirname+'/view');
@@ -18,7 +19,8 @@ app.get(function(req, res) {
         res.sendFile(view+'/index.html');
     });
 
-app.use('/jobs', jobRouter);
+app.use('/jobs', jobListingRouter);
+app.use('/resources', localResourceRouter);
 
 app.use(function (err, req, res, next) {
   if(err) {
