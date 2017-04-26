@@ -4,7 +4,8 @@ var collection = require('../model/jobListing');
 // to post articles
 exports.add = function(req, res, next) {
     var doc = new collection(req.body);
-    doc.save(function(err) {
+    doc.save(function(err, body) {
+        console.log(body.id)
         next(err, req, res);
     });
 }

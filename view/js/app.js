@@ -150,10 +150,12 @@ gtexcelApp.controller('formController', ['$scope', '$http', function($scope, $ht
    $scope.submitted = false;
    $http.defaults.headers.post['Content-Type'] = 'application/json';
    $scope.submit = function(listing) {
-       $http.post('http://localhost:8080/jobs', listing, {})
-           .success(function() {
+       $http.post('http://localhost:8080/jobs', $scope.listing, {})
+           .then(function onSuccess(response) {
                console.log('thing was submitted');
                $scope.submitted = true;
+           }, function onError(response) {
+           		console.log('there was an error with the post request');
            });
    };
 }]);
