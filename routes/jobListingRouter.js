@@ -1,9 +1,9 @@
 'use strict';
 var express = require('express');
 var router = express.Router();
-var collection = require('../model/jobListing');
-var DbApi = require('../src/dbApi');
-var listings = new DbApi(collection);
+// var collection = require('../model/jobListing');
+// var DbApi = require('../src/dbApi');
+// var listings = new DbApi(collection);
 var path = require('path');
 var view = path.resolve(__dirname+'/../view');
 var mailer = require('../src/mail');
@@ -13,12 +13,7 @@ router.route('/')
         res.sendFile(view+'/job-listing-form.html');
     })
     .post([
-        function(req, res, next) {
-            console.log('got the thing', req.body);
-            console.log(next);
-            next(null, req, res);
-        },
-        listings.add,
+        // listings.add,
         function(req, res, next) {
             req.body.subject = 'Your Job Listing Submission';
             req.body.html = '<h1>Your Listing</h1></br>\
@@ -36,27 +31,27 @@ router.route('/')
         }
     ]);
 
-router.route('/:id')
-    .get([
-        listings.find,
-        function(req, res, next) {
-            res.json(req.body.doc);
-        }
-    ])
-    .put([
-        listings.update,
-        function() {
-            res.json(req.body.doc);
-        }
-    ])
-    .delete([
-        //TODO: verify delete?
-        listings.remove,
-        function(req, res) {
-            res.status(200).send(
-                'We deleted your thing for you! It\'s gone now!'
-            );
-        }
-    ]);
+// router.route('/:id')
+//     .get([
+//         listings.find,
+//         function(req, res, next) {
+//             res.json(req.body.doc);
+//         }
+//     ])
+//     .put([
+//         listings.update,
+//         function() {
+//             res.json(req.body.doc);
+//         }
+//     ])
+//     .delete([
+//         //TODO: verify delete?
+//         listings.remove,
+//         function(req, res) {
+//             res.status(200).send(
+//                 'We deleted your thing for you! It\'s gone now!'
+//             );
+//         }
+//     ]);
 
 module.exports = router;

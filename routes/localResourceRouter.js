@@ -1,9 +1,9 @@
 'use strict';
 var express = require('express');
 var router = express.Router();
-var collection = require('../model/localResource');
-var DbApi = require('../src/dbApi');
-var resources = new DbApi(collection);
+// var collection = require('../model/localResource');
+// var DbApi = require('../src/dbApi');
+// var resources = new DbApi(collection);
 var path = require('path');
 var view = path.resolve(__dirname+'/../view');
 var mailer = require('../src/mail');
@@ -13,7 +13,7 @@ router.route('/')
         res.sendFile(view+'/local-resource-form.html');
     })
     .post([
-        resources.add,
+        // resources.add,
         function(req, res, next) {
             req.body.subject = 'Your Local Resource Submission'
             req.body.text = '<h1>Your Post:</h1><br>\
@@ -33,28 +33,28 @@ router.route('/')
         }
     ]);
 
-router.route('/:id')
-    .get([
-        resources.find,
-        function(req, res, next) {
-            // TODO: should respond with some kind of editing interface
-            res.json(req.body.doc);
-        }
-    ])
-    .put([
-        resources.update,
-        function() {
-            res.json(req.body.doc);
-        }
-    ])
-    .delete([
-        //verify delete?
-        resources.remove,
-        function(req, res) {
-            res.status(200).send(
-                'We deleted your thing for you! It\'s gone now!'
-            );
-        }
-    ]);
+// router.route('/:id')
+//     .get([
+//         resources.find,
+//         function(req, res, next) {
+//             // TODO: should respond with some kind of editing interface
+//             res.json(req.body.doc);
+//         }
+//     ])
+//     .put([
+//         resources.update,
+//         function() {
+//             res.json(req.body.doc);
+//         }
+//     ])
+//     .delete([
+//         //verify delete?
+//         resources.remove,
+//         function(req, res) {
+//             res.status(200).send(
+//                 'We deleted your thing for you! It\'s gone now!'
+//             );
+//         }
+//     ]);
 
 module.exports = router;
